@@ -1,5 +1,7 @@
 # GitLab Handbook AI — RAG Chatbot
 
+> 🚀 **Live Demo:** [https://gitlab-rag.vercel.app](https://gitlab-rag.vercel.app)
+
 A production-quality Retrieval-Augmented Generation chatbot that answers questions
 about the GitLab handbook. It uses hybrid semantic + keyword search backed by
 pgvector and Postgres FTS, with Gemini for both contextual enrichment and answer
