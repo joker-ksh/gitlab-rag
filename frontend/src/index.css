@@ -1,0 +1,112 @@
+/* ── GitLab Design System — CSS Variables ─────────────────────────────────── */
+
+/* Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* GitLab purple brand */
+  --gl-purple:        #6b21a8;
+  --gl-purple-dark:   #4c1d7a;
+  --gl-purple-light:  #9333ea;
+  --gl-orange:        #fc6d26;
+  --gl-orange-dark:   #e05a1a;
+
+  /* Light mode */
+  --bg-page:          #ffffff;
+  --bg-sidebar:       #f9f9f9;
+  --bg-input:         #ffffff;
+  --bg-user-bubble:   #6b21a8;
+  --bg-bot-bubble:    #f4f4f4;
+  --bg-panel:         #fafafa;
+  --bg-card:          #ffffff;
+
+  --text-primary:     #1f1f1f;
+  --text-secondary:   #525252;
+  --text-muted:       #868686;
+  --text-on-purple:   #ffffff;
+  --text-link:        #6b21a8;
+
+  --border-color:     #e5e5e5;
+  --border-strong:    #d0d0d0;
+
+  --score-semantic:   #5b8dee;
+  --score-keyword:    #2da44e;
+  --score-combined:   #fc6d26;
+
+  --conf-high-bg:     #dcfce7;
+  --conf-high-text:   #166534;
+  --conf-high-border: #bbf7d0;
+  --conf-med-bg:      #fef9c3;
+  --conf-med-text:    #854d0e;
+  --conf-med-border:  #fde68a;
+  --conf-low-bg:      #fee2e2;
+  --conf-low-text:    #991b1b;
+  --conf-low-border:  #fecaca;
+
+  --shadow-sm:        0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:        0 2px 8px rgba(0,0,0,0.10);
+  --radius:           6px;
+  --radius-lg:        10px;
+  --radius-pill:      999px;
+}
+
+/* ── Dark mode ────────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-page:          #1a1a2e;
+  --bg-sidebar:       #16213e;
+  --bg-input:         #0f3460;
+  --bg-user-bubble:   #7c3aed;
+  --bg-bot-bubble:    #1e293b;
+  --bg-panel:         #16213e;
+  --bg-card:          #1e293b;
+
+  --text-primary:     #e2e8f0;
+  --text-secondary:   #94a3b8;
+  --text-muted:       #64748b;
+  --text-on-purple:   #ffffff;
+  --text-link:        #a78bfa;
+
+  --border-color:     #2d3748;
+  --border-strong:    #4a5568;
+
+  --conf-high-bg:     #14532d;
+  --conf-high-text:   #86efac;
+  --conf-high-border: #166534;
+  --conf-med-bg:      #451a03;
+  --conf-med-text:    #fcd34d;
+  --conf-med-border:  #78350f;
+  --conf-low-bg:      #450a0a;
+  --conf-low-text:    #fca5a5;
+  --conf-low-border:  #7f1d1d;
+
+  --shadow-sm:        0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:        0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ── Reset ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11'; /* Inter optical features */
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }

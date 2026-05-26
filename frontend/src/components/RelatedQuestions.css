@@ -1,0 +1,52 @@
+.related-questions {
+  margin: -4px 0 16px 0;
+  padding: 12px 14px;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  border-top-left-radius: 3px;
+}
+
+.related-questions__label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.related-questions__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.related-questions__chip {
+  background: var(--bg-page);
+  border: 1px solid var(--gl-purple);
+  color: var(--gl-purple);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.related-questions__chip:hover {
+  background: var(--gl-purple);
+  color: #fff;
+}
+
+[data-theme="dark"] .related-questions__chip {
+  color: #a78bfa;
+  border-color: #a78bfa;
+}
+
+[data-theme="dark"] .related-questions__chip:hover {
+  background: #7c3aed;
+  color: #fff;
+  border-color: #7c3aed;
+}

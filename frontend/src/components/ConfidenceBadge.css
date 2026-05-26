@@ -1,0 +1,45 @@
+.confidence-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  border-left: 3px solid transparent;
+}
+
+.confidence-badge--high {
+  background: var(--conf-high-bg);
+  color: var(--conf-high-text);
+  border-left-color: #16a34a;
+}
+
+.confidence-badge--medium {
+  background: var(--conf-med-bg);
+  color: var(--conf-med-text);
+  border-left-color: #d97706;
+}
+
+.confidence-badge--low,
+.confidence-badge--none {
+  background: var(--conf-low-bg);
+  color: var(--conf-low-text);
+  border-left-color: #dc2626;
+}
+
+.confidence-badge__label {
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.confidence-badge__message {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
