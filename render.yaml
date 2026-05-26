@@ -3,7 +3,7 @@ services:
     name: gitlab-rag-backend
     runtime: python
     rootDir: backend
-    buildCommand: pip install -r ../requirements.txt
+    buildCommand: pip install --only-binary=:all: pydantic pydantic-core; pip install -r ../requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: GEMINI_API_KEY
