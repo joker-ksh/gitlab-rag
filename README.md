@@ -250,7 +250,54 @@ Open **http://localhost:5173**
 
 ---
 
-## Running the Evaluation Suite
+## Deployment
+
+### Backend → Render (free tier)
+
+1. Push this repo to GitHub
+2. Go to [render.com](https://render.com) → New → Web Service
+3. Connect your GitHub repo
+4. Set these fields:
+   - **Root Directory:** `backend`
+   - **Build Command:** `pip install -r ../requirements.txt`
+   - **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
+   - **Runtime:** Python 3
+5. Add environment variables:
+   ```
+   GEMINI_API_KEY      = your key
+   SUPABASE_URL        = https://your-project.supabase.co
+   SUPABASE_KEY        = eyJ...  (anon key)
+   FRONTEND_URL        = https://your-app.vercel.app
+   ```
+6. Deploy — note the URL (e.g. `https://gitlab-rag-backend.onrender.com`)
+
+> The `render.yaml` in the repo root auto-configures this if you use Render's Blueprint deploy.
+
+---
+
+### Frontend → Vercel (free tier)
+
+1. Go to [vercel.com](https://vercel.com) → New Project → Import your GitHub repo
+2. Set:
+   - **Root Directory:** `frontend`
+   - **Framework Preset:** Vite (auto-detected)
+3. Add environment variable:
+   ```
+   VITE_BACKEND_URL = https://gitlab-rag-backend.onrender.com
+   ```
+4. Deploy
+
+> The `frontend/vercel.json` handles SPA routing automatically.
+
+---
+
+### After deploying both
+
+1. Copy the Vercel URL → paste it as `FRONTEND_URL` in Render env vars → redeploy backend
+2. Test: `GET https://your-backend.onrender.com/health` → `{"status":"ok"}`
+3. Open your Vercel URL and ask a question
+
+
 
 ```bash
 # Retrieval-only — no generation quota needed, runs immediately
